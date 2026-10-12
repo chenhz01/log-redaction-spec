@@ -2,6 +2,8 @@
 
 Declarative log redaction: declare sensitive fields in a JSON spec, validate the spec, apply mask/drop/hash strategies to log lines, and audit emitted logs for anything that still leaks. Pure standard library, no network, CLI included.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Logs leak. Emails, bearer tokens, IPs, and phone numbers end up in log files that then flow into aggregators, ticket systems, and third-party SaaS. Point fixes (one-off `sed`, ad-hoc formatter hooks) drift: each service redacts different fields in different ways, and nobody can answer "what is our redaction policy?" from one file. Worse, nothing checks whether redaction actually worked after the fact.
